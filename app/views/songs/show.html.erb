@@ -1,0 +1,19 @@
+<h2><%= @song.title %></h2>
+
+<ul>
+  <li>release year: <%= @song.release_year %></li>
+  <li>artist name: <%= @song.artist_name %></li>
+  <li>genre: <%= @song.genre %></li>
+
+</ul>
+<%= link_to "edit song", edit_song_path(@song) %>
+<hr>
+<!-- <h2><#%= @song.name %>'s teachers</h2>
+<ul>
+  <#% @song.teachers.each do |teacher| %>
+  <li>teacher: <#%= link_to teacher.name, teacher %></li>
+  <#% end %>
+</ul> -->
+<%= form_tag song_path(@song), method: "DELETE" do %>
+  <%= submit_tag "Delete #{@song.title}" %>
+<% end %>
