@@ -2,4 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel Edit', @song %>
+<%= link_to 'Cancel Edit', @song %> ∙
+<%= link_to 'Delete', @song, method: 'delete', data: { confirm: 'Are you sure?' }  %>

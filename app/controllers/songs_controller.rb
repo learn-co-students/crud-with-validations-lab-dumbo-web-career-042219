@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :current_song, only: [:show, :edit, :update, :destroy]
+  before_action :current_song, only: [:show, :edit, :update]
 
   def index
     @songs = Song.all
@@ -38,6 +38,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
+    @song = Song.find(params[:id])
     @song.destroy
 
     redirect_to songs_path
